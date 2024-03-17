@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1, shrink-to-fit=no"
+    />
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/Catalog">Каталог</a></li>
+        <li><a href="/Contact">Контакты</a></li>
+      </ul>
+    </nav>
+    <div style="margin-top: 30px">{% block content %} {% endblock %}</div>
+    <div style="margin-top: 10px">{% block product %} {% endblock %}</div>
+  </body>
+  <footer style="margin-top: 200px">
+    <p>
+      'Это футтер интернет магазина , все права защищены. Разработка сайта Ivan,
+      2024 команда GB ' &copy;
+    </p>
+  </footer>
+</html>

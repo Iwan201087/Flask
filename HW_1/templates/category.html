@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %} {{ title }} {% endblock %} {% block
+content %}
+<p><a href="/Catalog">Назад в Каталог </a></p>
+{% if category %}
+<p><a href="/Catalog/{{ category }}">Назад к категории {{ category }}</a></p>
+{% endif %}
+<h1>{{ title }}</h1>
+<img src="/static/img/{{ title }}.jpg" height="300px" />
+{% for item, val in data.items() %} {% if item == title %} {% for product in val
+%}
+<li><a href="/Catalog/{{ title }}/{{product}}">{{product}}</a></li>
+{% endfor %} {% endif %} {% endfor %} {% endblock %}
