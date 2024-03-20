@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %} {{ title }} {% endblock %} {% block
+content %}
+<h4>Для авторизации на сайте, Вам необходимо заполнить следующие формы</h4>
+<form action="/login" method="post">
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %} {% for category, message in messages %}
+  <div class="alert alert-{{ category }}">{{ message }}</div>
+  {% endfor %} {% endif %} {% endwith %}
+  <input type="text" name="name" placeholder="Имя" />
+  <input type="email" name="email" placeholder="Электронная почта" />
+  <input type="submit" value="Отправить" />
+</form>
+{% endblock %}
