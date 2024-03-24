@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+<div style="margin-left: 50px">
+  <h1>Добро пожаловать на сайт, для домашней работы к семинару №3 !</h1>
+  {% if not registered %}
+  <p>Для продолжения работы необходимо пройти регистрацию!</p>
+  <a href="{{ url_for('register') }}">Регистрация</a>
+  {% endif %} {% if registered %}
+  <br />
+  <h3>
+    Вот список всех зарегистрированных пользователей, поздравляем, вы один из
+    них!
+  </h3>
+  <p>Для Вашей безопасности, все пароли хранятся в зашифрованном виде!!!</p>
+  <div class="row">
+    {% for user in users %}
+    <p class="col-12 col-md-6">
+      Имя : {{ user.user_name }}<br />
+      Фамилия : {{ user.user_surname }}<br />
+      Email : {{ user.email }}
+    </p>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}
